@@ -3,71 +3,183 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amar Financial Services</title>
-  <meta name="description" content="Amar Financial Services: [ONE-LINE SUMMARY]. Call [PHONE].">
+  <title>Amar Financial Services | Wills and Lasting Powers of Attorney</title>
+  <meta name="description" content="Amar Financial Services: wills and Lasting Powers of Attorney in [AREA]. Call [PHONE].">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="site.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="wrap">
-      <p class="name">Amar Financial Services</p>
-      <a class="call call-small" href="tel:+440000000000">Call <span class="todo">[PHONE]</span></a>
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span class="logo-name">Amar</span>
+        <span class="logo-tag">Financial Services &middot; <span class="todo">Estd. [YEAR]</span></span>
+      </a>
+      <ul class="header-contact">
+        <li><a href="tel:+440000000000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg><span class="todo">[PHONE]</span></a></li>
+        <li><a href="mailto:"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><span class="todo">[EMAIL]</span></a></li>
+      </ul>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <h1><span class="todo">[What the business does, in one plain sentence]</span></h1>
-        <p class="lead"><span class="todo">[Who it serves and the area it covers]</span></p>
-        <a class="call" href="tel:+440000000000">
-          <span class="call-label">Call us</span>
-          <span class="call-number todo">[PHONE]</span>
-        </a>
-        <p class="hours"><span class="todo">[Opening hours, e.g. Monday to Friday, 9am to 5pm]</span></p>
+  <div class="nav-wrap">
+    <div class="container">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="carousel" aria-label="Introduction">
+      <div class="slide active">
+        <img src="images/hero-1.svg" alt="[Describe photo: at his desk with a couple, going through their wills]" width="1600" height="700">
+        <div class="caption">
+          <h2>Wills made simple</h2>
+          <p class="todo">[One or two sentences on making a will with Amar Financial Services.]</p>
+          <a class="btn" href="services.html#wills">Learn more</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/hero-2.svg" alt="[Describe photo: signing documents with a client]" width="1600" height="700">
+        <div class="caption">
+          <h2>Lasting Powers of Attorney</h2>
+          <p class="todo">[One or two sentences on arranging an LPA.]</p>
+          <a class="btn" href="services.html#lpa">Learn more</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/hero-3.svg" alt="[Describe photo: portrait in the office]" width="1600" height="700">
+        <div class="caption">
+          <h2 class="todo">[Years] years of experience</h2>
+          <p class="todo">[One or two sentences on his background and the people he serves.]</p>
+          <a class="btn" href="about.html">About us</a>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button aria-label="Show slide 1" aria-current="true"></button>
+        <button aria-label="Show slide 2"></button>
+        <button aria-label="Show slide 3"></button>
       </div>
     </section>
 
-    <section id="services">
-      <div class="wrap">
-        <h2>Services</h2>
-        <ul class="services">
-          <li><span class="todo">[Service 1]</span></li>
-          <li><span class="todo">[Service 2]</span></li>
-          <li><span class="todo">[Service 3]</span></li>
+    <section class="section section-white">
+      <div class="container">
+        <h1>Welcome to Amar Financial Services</h1>
+        <p class="lead todo">[One sentence: an independent financial adviser based in [AREA], helping clients with wills and Lasting Powers of Attorney.]</p>
+        <div class="two-col">
+          <div>
+            <p class="todo">[Paragraph: what he does and how he works, e.g. home visits, plain explanations, fixed fees.]</p>
+            <p class="todo">[Paragraph: who he works with, e.g. families, retired clients, local businesses.]</p>
+            <p><a class="btn" href="contact.html">Contact us</a></p>
+          </div>
+          <aside class="side-panel">
+            <img src="images/portrait.svg" alt="[Name], [title]" width="600" height="750">
+            <p class="label">Your adviser</p>
+            <h3 class="todo">[Full name]</h3>
+            <p class="todo">[Qualifications, e.g. Dip PFS]</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sky">
+      <div class="container">
+        <ul class="cards">
+          <li class="card">
+            <img src="images/card-wills.svg" alt="[Describe photo]" width="800" height="500">
+            <h3>Wills</h3>
+            <p>Make sure your estate goes to the people you choose.</p>
+            <a class="btn" href="services.html#wills">Read more</a>
+          </li>
+          <li class="card">
+            <img src="images/card-lpa.svg" alt="[Describe photo]" width="800" height="500">
+            <h3>Lasting Powers of Attorney</h3>
+            <p>Choose who can make decisions for you if you become unable to.</p>
+            <a class="btn" href="services.html#lpa">Read more</a>
+          </li>
+          <li class="card">
+            <img src="images/card-other.svg" alt="[Describe photo]" width="800" height="500">
+            <h3>Other services</h3>
+            <p class="todo">[Mortgages, life insurance, pensions: confirm which are still offered.]</p>
+            <a class="btn" href="services.html#other">Read more</a>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section id="about">
-      <div class="wrap">
-        <h2>About</h2>
-        <p><span class="todo">[How long the business has been running, who runs it, anything else for an "about" section]</span></p>
+    <section class="section section-navy">
+      <div class="container">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li>
+            <h3>Call</h3>
+            <p class="todo">[Ring for a free initial chat about what you need.]</p>
+          </li>
+          <li>
+            <h3>Meet</h3>
+            <p class="todo">[We meet at the office or at your home and go through the details.]</p>
+          </li>
+          <li>
+            <h3>Done</h3>
+            <p class="todo">[Your documents are prepared, signed and stored safely.]</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <dl class="contact">
-          <dt>Phone</dt>
-          <dd><a href="tel:+440000000000" class="todo">[PHONE]</a></dd>
-          <dt>Email</dt>
-          <dd><a href="mailto:" class="todo">[EMAIL, or remove]</a></dd>
-          <dt>Address</dt>
-          <dd><address class="todo">[ADDRESS, or remove]</address></dd>
-        </dl>
+    <section class="section section-white">
+      <div class="container">
+        <ul class="logos" aria-label="Memberships and accreditations">
+          <li class="todo">[Accreditation logo]</li>
+          <li class="todo">[Accreditation logo]</li>
+          <li class="todo">[Accreditation logo]</li>
+        </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p class="todo">[Regulatory status, if any, e.g. FCA firm reference number. Confirm before writing.]</p>
-      <h2 id="privacy">Privacy</h2>
-      <p>This website does not use cookies, does not track visitors and has no forms. The site is hosted by GitHub, which keeps standard server logs (such as IP addresses) for security purposes.</p>
-      <p>&copy; <span class="todo">[YEAR]</span> Amar Financial Services</p>
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h2>Registered details</h2>
+          <p class="todo">[Regulatory statement, e.g. "Amar Financial Services is authorised and regulated by the Financial Conduct Authority. FCA number [NUMBER]." Confirm the exact wording before publishing.]</p>
+          <p class="todo">[Statement that will writing and Lasting Powers of Attorney are not regulated by the FCA, if that applies.]</p>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="tel:+440000000000" class="todo">[PHONE]</a></li>
+            <li><a href="mailto:" class="todo">[EMAIL]</a></li>
+            <li class="todo">[ADDRESS]</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html#privacy">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-base">&copy; <span class="todo">[YEAR]</span> Amar Financial Services</p>
     </div>
   </footer>
 </body>

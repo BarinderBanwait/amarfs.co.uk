@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Placeholder photo: Head-and-shoulders portrait, suit, plain background">
+<rect width="600" height="750" fill="#c9d3df"/>
+<rect x="8" y="8" width="584" height="734" fill="none" stroke="#8fa0b5" stroke-width="3" stroke-dasharray="14 10"/>
+<g fill="none" stroke="#5f7189" stroke-width="5.6" transform="translate(300.0 315.0)">
+<rect x="-86.7" y="-53.3" width="173.3" height="113.3" rx="13.3"/>
+<circle r="33.3" cy="3.3"/>
+<path d="M-30.0 -53.3 l13.3 -20.0 h33.3 l13.3 20.0"/>
+</g>
+<text x="300.0" y="458.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="33" font-weight="bold" fill="#33445a">PHOTO: portrait</text>
+<text x="300.0" y="504.2" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="26.4" fill="#33445a">Head-and-shoulders portrait, suit, plain background</text>
+<text x="300.0" y="543.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21.4" fill="#5f7189">600 × 750</text>
+</svg>
