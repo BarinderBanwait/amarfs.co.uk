@@ -1,16 +1,16 @@
 /* Amar Financial Services. Plain CSS, no build step. Mobile first. */
 
 :root {
-  --ink: #333;
-  --muted: #5a6573;
-  --navy: #224c81;
-  --navy-dark: #1d406d;
-  --sky: #b6ceec;
-  --rust: #b23500;
-  --rust-dark: #8f2b00;
-  --grey: #e5e5e5;
-  --panel: #f2f2f2;
+  --ink: #1a1a1a;
+  --muted: #555;
+  --black: #000;
   --white: #fff;
+  --blue: #0047bb;      /* 8.0:1 on white */
+  --blue-dark: #00358c;
+  --red: #d0021b;       /* 5.7:1 on white */
+  --red-dark: #a50016;
+  --grey: #f0f0f0;
+  --line: #d9d9d9;
   --focus: #f0b429;
   --head: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --body: "Raleway", "Helvetica Neue", Arial, sans-serif;
@@ -31,7 +31,7 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
-a { color: var(--navy); }
+a { color: var(--blue); }
 
 a:focus-visible, button:focus-visible {
   outline: 3px solid var(--focus);
@@ -43,13 +43,13 @@ h1, h2, h3 {
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.25;
-  color: var(--navy);
+  color: var(--black);
   margin: 0 0 0.75rem;
 }
 
 h1 { font-size: 1.75rem; }
 h2 { font-size: 1.5rem; }
-h3 { font-size: 1.125rem; color: var(--rust); }
+h3 { font-size: 1.125rem; color: var(--red); }
 
 .container {
   max-width: 72rem;
@@ -70,83 +70,51 @@ h3 { font-size: 1.125rem; color: var(--rust); }
   padding: 0.5rem 1rem;
 }
 
-/* Header: logo left, phone and email right */
+/* Header: white banner, logo centred, name underneath */
+
+.site-header { background: var(--white); }
 
 .site-header .container {
-  display: flex;
-  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.logo {
+  gap: 0.6rem;
   text-decoration: none;
-  line-height: 1.1;
 }
 
-.logo-name {
-  display: block;
+.brand-logo {
+  width: auto;
+  height: 5.5rem;
+}
+
+.brand-name {
   font-family: var(--head);
-  font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: 0.02em;
-  color: var(--rust);
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--black);
 }
-
-.logo-tag {
-  display: block;
-  font-family: var(--head);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--navy);
-  border-top: 2px solid var(--rust);
-  padding-top: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.header-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.header-contact li {
-  border-left: 1px solid var(--sky);
-  padding: 0 1rem;
-}
-
-.header-contact a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.header-contact svg { width: 1.1rem; height: 1.1rem; fill: var(--navy); flex: none; }
 
 /* Navigation bar */
 
-.nav-wrap { background: var(--sky); }
+.nav-wrap { background: var(--black); border-bottom: 4px solid var(--red); }
 
 .nav-toggle {
   display: none;
   margin: 0.5rem 0;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--navy);
+  border: 1px solid var(--white);
   border-radius: 4px;
   background: transparent;
-  color: var(--navy);
+  color: var(--white);
   font: 600 1rem var(--head);
   text-transform: uppercase;
   cursor: pointer;
@@ -165,21 +133,21 @@ h3 { font-size: 1.125rem; color: var(--rust); }
 .site-nav a {
   display: block;
   padding: 0.75rem 0;
-  color: var(--navy);
+  color: var(--white);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px solid rgba(34, 76, 129, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] { color: var(--rust); }
+.site-nav a:hover { text-decoration: underline; }
+.site-nav a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--red); padding-left: 0.75rem; }
 
 /* Carousel (home page) */
 
 .carousel {
   position: relative;
   overflow: hidden;
-  background: var(--navy-dark);
+  background: var(--black);
 }
 
 .slide { display: none; position: relative; }
@@ -225,7 +193,7 @@ h3 { font-size: 1.125rem; color: var(--rust); }
 
 /* Page banner (inner pages) */
 
-.banner { position: relative; background: var(--navy-dark); }
+.banner { position: relative; background: var(--black); }
 
 .banner img {
   width: 100%;
@@ -251,34 +219,36 @@ h3 { font-size: 1.125rem; color: var(--rust); }
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: var(--rust);
+  background: var(--red);
   color: var(--white);
   text-decoration: none;
   font-weight: 600;
   border-radius: 3px;
 }
 
-.btn:hover { background: var(--rust-dark); }
+.btn:hover { background: var(--red-dark); }
 
 /* Sections */
 
 .section { padding: 2.5rem 0; }
 .section-white { background: var(--white); }
 .section-grey { background: var(--grey); }
-.section-sky { background: var(--sky); }
-.section-navy { background: var(--navy); color: var(--white); }
-.section-navy h2, .section-navy h3 { color: var(--white); }
+.section-blue { background: var(--blue); color: var(--white); }
+.section-blue h2, .section-blue h3, .section-blue a { color: var(--white); }
+.section-blue .btn { background: var(--white); color: var(--blue); }
+.section-blue .btn:hover { background: var(--grey); }
 
 .lead {
   font-size: 1.3rem;
-  color: var(--navy);
+  color: var(--blue);
   margin: 0 0 1.5rem;
 }
 
 .two-col { display: grid; gap: 2rem; }
 
 .side-panel {
-  background: var(--panel);
+  background: var(--grey);
+  border-top: 4px solid var(--red);
   padding: 1.5rem;
   align-self: start;
 }
@@ -358,7 +328,7 @@ h3 { font-size: 1.125rem; color: var(--rust); }
   height: 5rem;
   display: grid;
   place-items: center;
-  border: 2px dashed #9aa8b8;
+  border: 2px dashed #999;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
@@ -371,7 +341,7 @@ h3 { font-size: 1.125rem; color: var(--rust); }
   display: grid;
   gap: 1.5rem;
   padding: 2.5rem 0;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid var(--line);
 }
 
 .service:last-child { border-bottom: 0; }
@@ -395,7 +365,7 @@ h3 { font-size: 1.125rem; color: var(--rust); }
   font-family: var(--head);
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--black);
   margin-top: 1.25rem;
 }
 .contact-list dt:first-child { margin-top: 0; }
@@ -406,9 +376,10 @@ address { font-style: normal; }
 /* Footer */
 
 .site-footer {
-  background: var(--navy-dark);
+  background: var(--black);
   color: var(--white);
   font-size: 1rem;
+  border-top: 4px solid var(--red);
   padding: 2.5rem 0 1.5rem;
 }
 
@@ -444,10 +415,14 @@ address { font-style: normal; }
   h1 { font-size: 2.1rem; }
   h2 { font-size: 1.75rem; }
 
+  .brand-logo { height: 8rem; }
+  .brand-name { font-size: 2.4rem; }
+
   .nav-toggle, .js .nav-toggle { display: none; }
   .site-nav, .js .site-nav { display: block; }
   .site-nav ul { display: flex; justify-content: space-between; padding: 0; }
   .site-nav a { padding: 1.1rem 1rem; border-bottom: 0; }
+  .site-nav a[aria-current="page"] { box-shadow: inset 0 -4px 0 var(--red); padding-left: 1rem; }
 
   .slide img { height: 34rem; }
   .caption {

@@ -1,3 +1,6 @@
 HANDOFF.md
 .DS_Store
 .claude/
+
+# Source documents (contain contact details); not for publishing
+images/*.pdf
