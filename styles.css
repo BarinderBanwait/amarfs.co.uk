@@ -153,6 +153,7 @@ h3 { font-size: 1.125rem; color: var(--red); }
 
 .slide { display: none; position: relative; }
 .slide.active { display: block; }
+.slide-split img { object-position: 50% 30%; }
 
 .slide img {
   width: 100%;
@@ -334,24 +335,46 @@ h3 { font-size: 1.125rem; color: var(--red); }
 /* About page: timeline and side photo */
 
 .timeline {
-  display: grid;
-  gap: 1.5rem;
-  margin: 0;
+  margin: 0 0 2rem;
   padding: 0;
   list-style: none;
+  border-left: 3px solid var(--red);
 }
 
-.timeline figure, .side-photo { margin: 0; }
-.timeline img, .side-photo img { margin-bottom: 0.6rem; }
-.timeline figcaption strong {
-  display: block;
-  font-family: var(--head);
-  text-transform: uppercase;
-  color: var(--red);
+.timeline li {
+  position: relative;
+  padding: 0 0 1.75rem 1.5rem;
 }
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.6rem;
+  top: 0.35rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--red);
+}
+
+.timeline p { margin: 0; }
+
+.timeline-year {
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--black);
+}
+
+.timeline img { margin-top: 0.75rem; max-width: 22rem; }
+
+.side-photo { margin: 0; }
+.side-photo img { margin-bottom: 0.6rem; }
 .side-photo figcaption { color: var(--muted); font-size: 1rem; }
 
 .small-print { font-size: 1rem; color: var(--muted); margin: 0; }
+.small-print + .small-print { margin-top: 0.75rem; }
 
 /* Services page: alternating image and text */
 
@@ -390,6 +413,50 @@ h3 { font-size: 1.125rem; color: var(--red); }
 .contact-list dd { margin: 0; }
 .contact-list .big { font-size: 1.6rem; font-weight: 700; }
 address { font-style: normal; }
+
+/* Contact form */
+
+.contact-form { margin-bottom: 1rem; }
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.optional { font-weight: 400; color: var(--muted); }
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--white);
+  border: 2px solid #8a8a8a;
+  border-radius: 3px;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+  border-color: var(--black);
+}
+
+.field-check { display: flex; gap: 0.75rem; align-items: flex-start; }
+.field-check input { width: 1.4rem; height: 1.4rem; margin-top: 0.2rem; flex: none; }
+.field-check label { font-weight: 400; margin: 0; }
+
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.contact-form button { border: 0; font: 600 1.1rem var(--body); cursor: pointer; padding: 0.85rem 2rem; }
+.contact-form :disabled { opacity: 0.55; cursor: not-allowed; }
+
+.form-notice {
+  background: var(--grey);
+  border-left: 4px solid var(--red);
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.form-status { margin: 1rem 0 0; font-weight: 600; }
+.form-status:empty { display: none; }
+
+.map { margin-top: 1.5rem; }
 
 /* Footer */
 
@@ -452,6 +519,16 @@ address { font-style: normal; }
     padding: 2rem 2rem 2.25rem;
   }
   .caption h2 { font-size: 2.2rem; }
+  .slide-split.active { display: grid; grid-template-columns: 1fr 1fr; background: var(--black); }
+  .slide-split img { height: 34rem; object-position: 50% 30%; }
+  .slide-split .caption {
+    position: static;
+    transform: none;
+    width: auto;
+    align-self: center;
+    background: none;
+    padding: 2rem 3rem 3rem;
+  }
   .carousel-controls { bottom: 1rem; }
 
   .banner img { height: 18rem; }
@@ -464,14 +541,6 @@ address { font-style: normal; }
 
   .service { grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
   .service:nth-child(even) .service-img { order: 2; }
-}
-
-@media (min-width: 36rem) {
-  .timeline { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 64rem) {
-  .timeline { grid-template-columns: repeat(5, 1fr); gap: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
