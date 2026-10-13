@@ -66,7 +66,7 @@
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (form.elements.website.value) return; // spam trap filled in
+    if (form.elements.botcheck.checked) return; // spam trap ticked
 
     button.disabled = true;
     status.textContent = 'Sending…';
