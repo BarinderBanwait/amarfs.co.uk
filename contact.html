@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Raleway:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="site.js?v=5" defer></script>
+  <script src="site.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -110,7 +110,12 @@
             <dt>Home visits</dt>
             <dd class="todo">[Whether home visits are available, and in which area.]</dd>
           </dl>
-          <img class="map" src="images/map.svg" alt="[Map showing the office location]" width="800" height="500">
+          <!-- Google Maps loads only on request, so no Google cookies are set until the visitor asks. -->
+          <div class="map" id="map" data-src="https://www.google.com/maps?q=16+Gledwood+Avenue,+Hayes,+UB4+0AN&amp;output=embed">
+            <p class="map-note">The map is provided by Google Maps. Showing it lets Google set cookies.</p>
+            <button class="btn map-load" type="button" id="map-load">Show map</button>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=16+Gledwood+Avenue,+Hayes,+UB4+0AN">Open in Google Maps</a></p>
+          </div>
         </aside>
       </div>
     </section>
@@ -118,7 +123,7 @@
     <section class="section section-grey" id="privacy">
       <div class="container">
         <h2>Privacy</h2>
-        <p>This website does not use cookies and does not track visitors. It is hosted by GitHub, which keeps standard server logs (such as IP addresses) for security purposes. Text fonts are loaded from Google Fonts, which receives your IP address when a page loads.</p>
+        <p>This website does not use cookies and does not track visitors. It is hosted by GitHub, which keeps standard server logs (such as IP addresses) for security purposes. Text fonts are loaded from Google Fonts, which receives your IP address when a page loads. The map on the Contact page comes from Google Maps. It loads only if you choose &ldquo;Show map&rdquo;, and Google may then set cookies.</p>
         <p>If you use the contact form, we receive your name, email address, phone number (if you give it), the topic you choose and your message. The form is processed by <a href="https://web3forms.com">Web3Forms</a>, which passes it to us by email. We use these details only to reply to your enquiry. We do not share them or use them for marketing.</p>
         <p class="todo">[How long enquiries are kept, and how personal information given in person is handled.]</p>
         <p>To ask what information we hold about you, or to have it deleted, email <a href="mailto:lsbanwait@amarfs.co.uk">lsbanwait@amarfs.co.uk</a>.</p>

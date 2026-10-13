@@ -86,3 +86,21 @@
     });
   });
 })();
+
+// Contact page map: load the Google Maps embed only when the visitor asks for it.
+
+(function () {
+  var map = document.getElementById('map');
+  var button = document.getElementById('map-load');
+  if (!map || !button) return;
+
+  button.addEventListener('click', function () {
+    var frame = document.createElement('iframe');
+    frame.src = map.getAttribute('data-src');
+    frame.title = 'Map showing 16 Gledwood Avenue, Hayes';
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'no-referrer-when-downgrade';
+    map.querySelector('.map-note').remove();
+    button.replaceWith(frame);
+  });
+})();
