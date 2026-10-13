@@ -27,6 +27,7 @@ body {
   font-family: var(--body);
   font-size: 1.125rem; /* 18px: the reference site uses 16px light; larger for older readers */
   line-height: 1.65;
+  font-variant-numeric: lining-nums; /* Raleway defaults to old-style figures */
 }
 
 img { max-width: 100%; height: auto; display: block; }
