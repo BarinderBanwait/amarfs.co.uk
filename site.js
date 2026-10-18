@@ -12,7 +12,7 @@
 })();
 
 // Contact form. It posts to the outside form service named in the form's action.
-// With no action set, the form is disabled and a notice points visitors to email.
+// With no action set, the form is disabled and a notice says so.
 
 (function () {
   var form = document.getElementById('contact-form');
@@ -44,7 +44,7 @@
       form.reset();
       status.textContent = 'Thank you. Your message has been sent, and Lachhman will reply as soon as he can.';
     }).catch(function () {
-      status.textContent = 'Sorry, your message could not be sent. Please email lsbanwait@amarfs.co.uk instead.';
+      status.textContent = 'Sorry, your message could not be sent. Please try again later.';
     }).then(function () {
       button.disabled = false;
     });
