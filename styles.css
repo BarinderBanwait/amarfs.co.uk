@@ -215,14 +215,8 @@ h3 { font-size: 1.125rem; color: var(--red); }
 }
 
 .card { text-align: center; }
-.card img { margin-bottom: 1rem; }
+.card img { margin-bottom: 1rem; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .card p { margin: 0 0 1rem; }
-
-/* About page: photo beside text */
-
-.side-photo { margin: 0; }
-.side-photo img { margin-bottom: 0.6rem; }
-.side-photo figcaption { color: var(--muted); font-size: 1rem; }
 
 .small-print { font-size: 1rem; color: var(--muted); margin: 0; }
 .small-print + .small-print { margin-top: 0.75rem; }
