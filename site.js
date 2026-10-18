@@ -1,4 +1,4 @@
-// Mobile menu toggle and home-page carousel. The pages work without this script.
+// Mobile menu toggle and contact form. The pages work without this script, except the form.
 
 (function () {
   var toggle = document.querySelector('.nav-toggle');
@@ -9,42 +9,6 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
-
-  var carousel = document.querySelector('.carousel');
-  if (!carousel) return;
-
-  var slides = carousel.querySelectorAll('.slide');
-  var dots = carousel.querySelectorAll('.carousel-controls button');
-  var current = 0;
-  var timer = null;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function show(i) {
-    slides[current].classList.remove('active');
-    dots[current].removeAttribute('aria-current');
-    current = (i + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].setAttribute('aria-current', 'true');
-  }
-
-  function start() {
-    if (reduceMotion || timer) return;
-    timer = setInterval(function () { show(current + 1); }, 7000);
-  }
-
-  function stop() {
-    clearInterval(timer);
-    timer = null;
-  }
-
-  dots.forEach(function (dot, i) {
-    dot.addEventListener('click', function () { stop(); show(i); });
-  });
-
-  carousel.addEventListener('mouseenter', stop);
-  carousel.addEventListener('mouseleave', start);
-  carousel.addEventListener('focusin', stop);
-  start();
 })();
 
 // Contact form. It posts to the outside form service named in the form's action.
@@ -84,23 +48,5 @@
     }).then(function () {
       button.disabled = false;
     });
-  });
-})();
-
-// Contact page map: load the Google Maps embed only when the visitor asks for it.
-
-(function () {
-  var map = document.getElementById('map');
-  var button = document.getElementById('map-load');
-  if (!map || !button) return;
-
-  button.addEventListener('click', function () {
-    var frame = document.createElement('iframe');
-    frame.src = map.getAttribute('data-src');
-    frame.title = 'Map showing 16 Gledwood Avenue, Hayes';
-    frame.loading = 'lazy';
-    frame.referrerPolicy = 'no-referrer-when-downgrade';
-    map.querySelector('.map-note').remove();
-    button.replaceWith(frame);
   });
 })();
